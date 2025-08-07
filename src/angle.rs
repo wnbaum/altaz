@@ -50,6 +50,8 @@ pub fn get_alt_az_from_eq(eq_coord: &EqCoord, geo_coord: &GeoCoord, sidereal: f6
 	let alt = alt_from_eq(hour_angle, eq_coord.dec, geo_coord.lat);
 	let az = az_from_eq(hour_angle, eq_coord.dec, geo_coord.lat, alt);
 
+	let az = az.rem_euclid(TAU);
+
 	AltAz { alt, az }
 }
 
