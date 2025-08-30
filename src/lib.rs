@@ -8,7 +8,7 @@ use crate::{
 #[cfg(test)]
 mod tests;
 
-mod angle;
+pub mod angle;
 mod time;
 
 pub fn apparent_alt_az_at(
